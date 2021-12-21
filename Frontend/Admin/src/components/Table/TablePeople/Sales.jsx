@@ -116,7 +116,7 @@ export default function TableSales(props) {
                       arrow>
                       <td className='text_over'>{item?.Address}</td>
                     </Tooltip>
-                    <td>{item?.Salary}</td>
+                    <td>{item?.Salary.toLocaleString(undefined, {minimumFractionDigits: 0,})}đ</td>
                     <td>{item?.Store?.StoreName}</td>
 
                     <td>
