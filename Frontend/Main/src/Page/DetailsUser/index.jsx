@@ -98,7 +98,7 @@ function Bill({ id }) {
                     {row.Validated ? 'Đã xác nhận' : 'Chưa xác nhận'}
                   </StyledTableCell>
                   <StyledTableCell align='right'>{row.Note}</StyledTableCell>
-                  <StyledTableCell align='right'>{row.Total}</StyledTableCell>
+                  <StyledTableCell align='right'>{row.Total.toLocaleString(undefined, {minimumFractionDigits: 0,})}đ</StyledTableCell>
                   <StyledTableCell align='right'>{row.Status}</StyledTableCell>
                 </StyledTableRow>
               ))}
