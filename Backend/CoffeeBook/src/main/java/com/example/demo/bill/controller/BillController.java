@@ -1,6 +1,12 @@
 package com.example.demo.bill.controller;
 
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.bill.model.AddBillDto;
 import com.example.demo.bill.model.Bill;
 import com.example.demo.bill.model.BillDto;
+import com.example.demo.bill.model.SaleExcelExporter;
 import com.example.demo.bill.model.SaleYear;
 import com.example.demo.bill.model.UpdateBillDto;
 import com.example.demo.bill.service.BillService;
@@ -42,6 +49,23 @@ public class BillController {
 		List<SaleYear> bill = service.findSale();
 		return new ResponseEntity<>(bill, HttpStatus.OK);
 	}
+	
+	@GetMapping("sale/export/excel")
+    public void exportToExcel(HttpServletResponse response) throws IOException {
+        response.setContentType("application/octet-stream");
+        DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+        String currentDateTime = dateFormatter.format(new Date());
+         
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=DoanhThuNam_" + currentDateTime + ".xlsx";
+        response.setHeader(headerKey, headerValue);
+         
+        List<Bill> listBills = service.findAll();
+         
+        SaleExcelExporter excelExporter = new SaleExcelExporter(listBills);
+         
+        excelExporter.export(response);    
+    }  
 
 	@PostMapping("bill/add")
 	public ResponseEntity<Object> Post(@RequestBody AddBillDto dto) {

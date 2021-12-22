@@ -69,12 +69,14 @@ public class BillServiceImpl extends GenericServiceImpl<Bill, Long> implements B
 			bill.setAddress(dto.getAddress());
 			bill.setName(dto.getName());
 			bill.setNote(dto.getNote());
-			bill.setPayBy(dto.getPayBy());
 			bill.setPhone(dto.getPhone());
 			bill.setTotalPrice(dto.getTotalPrice());
 			bill.setCreatedDate(LocalDateTime.now());
 			bill.setCustomer(customer);
 			bill.setStatus("Nhận đơn");
+			if(dto.getPayBy().equals("tienmat"))
+				bill.setPayBy("Tiền mặt");
+			else bill.setPayBy(dto.getPayBy());
 			if (dto.getTime().equals(""))
 				bill.setTime("20-30 phút");
 			else

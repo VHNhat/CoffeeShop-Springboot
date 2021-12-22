@@ -495,6 +495,16 @@ export const getBill= async(pag,router)=>{
   return [];
 
 }
+export const getSaleExcelExport= async()=>{
+  const response = await axios.get(`/sale/export/excel`);
+  console.log(response)
+  if (response?.data) {
+      return response?.data;
+      
+  }
+  return [];
+
+}
 export const delivery= async(id)=>{
 
   const response = await axios.put(`/bill/delivery/${id}`);
