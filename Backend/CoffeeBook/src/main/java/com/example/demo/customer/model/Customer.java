@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
@@ -73,7 +74,7 @@ public class Customer extends AbstractEntity {
 	@JsonProperty("Gender")
 	private int gender;
 
-	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "customer")
 	// @JsonIgnoreProperties("customer")
 	@JsonIgnore
 	// @JsonManagedReference
@@ -83,6 +84,14 @@ public class Customer extends AbstractEntity {
 	@JsonIgnore
 	private Set<ShoppingCart> shoppingCarts = new HashSet<>();
 
+	
+	@PreRemove
+	private void preRemove() {
+	    for (Bill b : bills) {
+	        b.setCustomer(null);
+	    }
+	}
+	
 	// Getters & Setters
 	public String getUsername() {
 		return username;

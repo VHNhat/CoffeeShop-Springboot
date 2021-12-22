@@ -21,6 +21,15 @@ public class UpdateStoreDto {
 
 	@JsonProperty("ManagerId")
 	private long managerId;
+	
+	@JsonProperty("LinkGG")
+	private String linkGG;
+	
+	@JsonProperty("District")
+	private String district;
+	
+	@JsonProperty("Photo")
+	private String photo;
 
 	// Getters & Setters
 	public String getStoreName() {
@@ -69,6 +78,30 @@ public class UpdateStoreDto {
 
 	public void setManagerId(long storeId) {
 		this.managerId = storeId;
+	}
+
+	public String getLinkGG() {
+		return linkGG;
+	}
+
+	public void setLinkGG(String linkGG) {
+		this.linkGG = linkGG;
+	}
+
+	public String getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(String district) {
+		this.district = district;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 
 }

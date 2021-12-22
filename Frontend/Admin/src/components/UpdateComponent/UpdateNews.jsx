@@ -74,6 +74,7 @@ function UpdateNews(props) {
       } else {
         enqueueSnackbar('Có lỗi xảy ra xin hãy thử lại', { variant: 'warning' });
       }
+      //setFlag(false);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [urlImage,flag]);
@@ -101,9 +102,9 @@ function UpdateNews(props) {
       );
     }
     else{
-      setUrlimage(null);
+      setUrlimage(null);    setFlag(!flag);
     }
-    setFlag(!flag);
+
   };
   return (
     <div className='UpdateNews'>
@@ -129,14 +130,14 @@ function UpdateNews(props) {
             name='Title'
             color='warning'
             value={valueData.Title}
-            onChange={handleChange}
+             onChange={(e) => handleChange(e)}
           />
           <label htmlFor='floatingInput'>Tiêu đề</label>
         </div>
 
      
 
-        <input type='file' id='inputFile' onChange={HandleChangeImg} />
+        <input type='file' id='inputFile' onChange={e=>HandleChangeImg(e)}  />
         <label className='inputFileLabel label--input inputData ' htmlFor='inputFile'>
           <div className='box_input'>
             <p className='text-center textUpload '>Hình ảnh mô tả</p>
@@ -153,7 +154,7 @@ function UpdateNews(props) {
             name='Content'
             color='warning'
             value={valueData.Content}
-            onChange={handleChange}
+             onChange={(e) => handleChange(e)}
             style={{ height: '200px' }}></textarea>
           <label className="Content" for='floatingTextarea2'>Nội dung</label>
         </div>

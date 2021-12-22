@@ -96,7 +96,7 @@ function AddBook(props) {
                   name='Name'
                   color='warning'
                   value={valueData.Name}
-                  onChange={handleChangeData}
+                 onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Tiêu đề</label>
               </div>
@@ -108,7 +108,7 @@ function AddBook(props) {
                   name='Price'
                   color='warning'
                   value={valueData.Price}
-                  onChange={handleChangeData}
+                 onChange={e=>handleChangeData(e)}
                 />
 
                 <label htmlFor='floatingInput'>Giá</label>
@@ -120,7 +120,7 @@ function AddBook(props) {
                   name='ProductTypeId'
                   color='warning'
                   value={valueData.ProductTypeId}
-                  onChange={handleChangeData}
+                 onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>productTypeId</label>
               </div>
@@ -131,7 +131,7 @@ function AddBook(props) {
                   name='SupplierId'
                   color='warning'
                   value={valueData.SupplierId}
-                  onChange={handleChangeData}
+                 onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>supplierId</label>
               </div>
@@ -142,7 +142,7 @@ function AddBook(props) {
                   name='Size'
                   color='warning'
                   value={valueData.Size}
-                  onChange={handleChangeData}
+                 onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Size</label>
               </div>
@@ -166,7 +166,7 @@ function AddBook(props) {
                   name='Description'
                   color='warning'
                   value={valueData.Description}
-                  onChange={handleChangeData}
+                 onChange={e=>handleChangeData(e)}
                   style={{ height: '165px' }}></textarea>
                 <label className='description' htmlFor='floatingTextarea2'>
                   Nội dung

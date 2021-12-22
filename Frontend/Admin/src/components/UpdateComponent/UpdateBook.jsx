@@ -70,7 +70,7 @@ function UpdateBook(props) {
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
-    if (valueData?.Id)  {
+    if (valueData?.Id )  {
       const photo=urlImage||valueData?.Photo;
       const res = await updateProduct({...valueData,Photo:photo});
       if (res?.success) {
@@ -133,7 +133,7 @@ function UpdateBook(props) {
                 name='Name'
                 color='warning'
                 value={valueData?.Name}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
               <label htmlFor='floatingInput'>Tiêu đề</label>
             </div>
@@ -145,7 +145,7 @@ function UpdateBook(props) {
                 name='Price'
                 color='warning'
                 value= {valueData?.Price}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
              
               <label htmlFor='floatingInput'>Giá</label>
@@ -157,7 +157,7 @@ function UpdateBook(props) {
                 name='Author'
                 color='warning'
                 value={valueData?.Author}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
               <label htmlFor='floatingInput'>Author</label>
             </div>
@@ -168,13 +168,13 @@ function UpdateBook(props) {
                 name='Publish'
                 color='warning'
                 value={valueData?.Publish}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
               <label htmlFor='floatingInput'>Publish</label>
             </div>
             </div>
             <div className='data--large_text'>
-            <input type='file' id='inputFile' onChange={HandleChangeImg} />
+            <input type='file' id='inputFile'onChange={e=>HandleChangeImg(e)} />
      
             
             <label className='inputFileLabel inputData ' htmlFor='inputFile'>
@@ -195,7 +195,7 @@ function UpdateBook(props) {
                 name='Description'
                 color='warning'
                 value={valueData.Description}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
                 style={{ height: '170px' }}></textarea>
               <label className='description' htmlFor='floatingTextarea2'>
                 Nội dung

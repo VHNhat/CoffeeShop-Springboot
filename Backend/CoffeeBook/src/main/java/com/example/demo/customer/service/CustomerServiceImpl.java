@@ -62,19 +62,20 @@ public class CustomerServiceImpl extends GenericServiceImpl<Customer, Long> impl
 		}
 		if (!errorList.isEmpty()) {
 			return new Gson().toJson(errorList);
-		}
-		try {
-			Customer customer = new Customer();
-			customer.setUsername(dto.getUsername());
-			customer.setPassword(dto.getPassword());
-			customer.setPhone(dto.getPhone());
-			customer.setEmail(dto.getEmail());
-			customer.setName(dto.getName());
-			repo.save(customer);
-			return "1";
-		} catch (Exception ex) {
-			System.out.println(ex.getMessage());
-			return "0";
+		} else {
+			try {
+				Customer customer = new Customer();
+				customer.setUsername(dto.getUsername());
+				customer.setPassword(dto.getPassword());
+				customer.setPhone(dto.getPhone());
+				customer.setEmail(dto.getEmail());
+				customer.setName(dto.getName());
+				repo.save(customer);
+				return "1";
+			} catch (Exception ex) {
+				System.out.println(ex.getMessage());
+				return "0";
+			}
 		}
 
 	}

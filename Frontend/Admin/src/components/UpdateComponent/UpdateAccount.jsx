@@ -82,7 +82,7 @@ function UpdateAccount(props) {
                 name='Username'
                 color='warning'
                 value={valueData?.Username}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
               <label htmlFor='floatingInput'>Username</label>
             </div>
@@ -94,7 +94,7 @@ function UpdateAccount(props) {
                 name='Password'
                 color='warning'
                 value={valueData?.Password}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
 
               <label htmlFor='floatingInput'>Password</label>
@@ -106,7 +106,7 @@ function UpdateAccount(props) {
                 name='RoleId'
                 color='warning'
                 value={valueData?.RoleId}
-                onChange={handleChange}>
+                 onChange={(e) => handleChange(e)}>
                   {
                     listRoleId?.map((item,index)=>(
                       <option key={index} value={item?.Id}>{item.RoleName}</option>

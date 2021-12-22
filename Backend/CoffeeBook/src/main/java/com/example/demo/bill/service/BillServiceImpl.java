@@ -163,4 +163,6 @@ public class BillServiceImpl extends GenericServiceImpl<Bill, Long> implements B
 	public List<SaleYear> findSale() {
 		return repo.GetSale();
 	}
+	
+	
 }

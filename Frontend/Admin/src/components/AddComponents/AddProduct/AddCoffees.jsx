@@ -106,7 +106,7 @@ function AddCoffee(props) {
                   name='Name'
                   color='warning'
                   value={valueData.Name}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Tiêu đề</label>
               </div>
@@ -118,7 +118,7 @@ function AddCoffee(props) {
                   name='Price'
                   color='warning'
                   value={valueData.Price}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
 
                 <label htmlFor='floatingInput'>Giá</label>
@@ -130,7 +130,7 @@ function AddCoffee(props) {
                 name='ProductTypeId'
                 color='warning'
                 value={valueData?.ProductTypeId}
-                onChange={handleChangeData}>
+                   onChange={e=>handleChangeData(e)}>
                   {
                     proType?.map((item,index)=>(
                       <option selected={valueData?.ProductTypeId===item?.Id&&"seleted"} key={index} value={item?.Id}>{item?.Name}</option>
@@ -149,7 +149,7 @@ function AddCoffee(props) {
                 name='supplierId'
                 color='warning'
                 value={valueData?.SupplierId}
-                onChange={handleChangeData}>
+                   onChange={e=>handleChangeData(e)}>
                   {
                     supplier?.map((item,index)=>(
                       <option selected={valueData?.SupplierId===item?.Id&&"seleted"} key={index} value={item?.Id}>{item?.Name}</option>
@@ -167,13 +167,13 @@ function AddCoffee(props) {
                   name='Size'
                   color='warning'
                   value={valueData.Size}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Size</label>
               </div>
             </div>
             <div className='data--large_text'>
-              <input type='file' id='inputFile' onChange={HandleChange} />
+              <input type='file' id='inputFile'   onChange={(e) => HandleChange(e)} />
 
               <label className='inputFileLabel inputData ' htmlFor='inputFile'>
                 <div className='box_input'>
@@ -191,7 +191,7 @@ function AddCoffee(props) {
                   name='Description'
                   color='warning'
                   value={valueData.Description}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                   style={{ height: '165px' }}></textarea>
                 <label className='description' htmlFor='floatingTextarea2'>
                   Nội dung

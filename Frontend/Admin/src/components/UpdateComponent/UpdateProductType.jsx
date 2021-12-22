@@ -73,6 +73,7 @@ function UpdateProductType(props) {
       } else {
         enqueueSnackbar('Có lỗi xảy ra xin hãy thử lại', { variant: 'warning' });
       }
+      //setFlag(false);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [urlImage,flag]);
@@ -100,9 +101,9 @@ function UpdateProductType(props) {
       );
     }
     else{
-      setUrlimage(null);
+      setUrlimage(null);   setFlag(!flag);
     }
-    setFlag(!flag);
+ 
   };
   return (
     <div className='UpdateProductType'>
@@ -135,7 +136,7 @@ function UpdateProductType(props) {
 
      
 
-        <input type='file' id='inputFile' onChange={HandleChangeImg} />
+        <input type='file' id='inputFile' onChange={e=>HandleChangeImg(e)} />
         <label className='inputFileLabel label--input inputData ' htmlFor='inputFile'>
           <div className='box_input'>
             <p className='text-center textUpload '>Hình ảnh mô tả</p>

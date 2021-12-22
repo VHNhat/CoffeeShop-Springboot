@@ -76,7 +76,7 @@ function AddSale(props) {
                 name='Name'
                 color='warning'
                 value={valueData?.Name}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
               <label htmlFor='floatingInput'>Họ và tên</label>
             </div>
@@ -88,7 +88,7 @@ function AddSale(props) {
                 name='Age'
                 color='warning'
                 value= {valueData?.Age}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
              
               <label htmlFor='floatingInput'>Tuổi</label>
@@ -100,7 +100,7 @@ function AddSale(props) {
                 name='Phone'
                 color='warning'
                 value={valueData?.Phone}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
               <label htmlFor='floatingInput'>Số điện thoại</label>
             </div>
@@ -111,7 +111,7 @@ function AddSale(props) {
                 name='Email'
                 color='warning'
                 value={valueData?.Email}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
               <label htmlFor='floatingInput'>Email</label>
             </div>
@@ -120,7 +120,7 @@ function AddSale(props) {
                 name='Gender'
                 color='warning'
                 value={valueData?.Gender}
-                onChange={handleChangeData}>
+                  onChange={e=>handleChangeData(e)}>
 
                   <option value="1">Nam</option>
                   <option value="0">Nữ</option>
@@ -135,7 +135,7 @@ function AddSale(props) {
                 name='Address'
                 color='warning'
                 value={valueData?.Address}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
               <label htmlFor='floatingInput'>Địa chỉ</label>
             </div>
@@ -146,7 +146,7 @@ function AddSale(props) {
                 name='City'
                 color='warning'
                 value={valueData?.City}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
               <label htmlFor='floatingInput'>Thành phố</label>
             </div>
@@ -157,7 +157,7 @@ function AddSale(props) {
                 name='Country'
                 color='warning'
                 value={valueData?.Country}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
               <label htmlFor='floatingInput'>Đất nước</label>
             </div>
@@ -168,7 +168,7 @@ function AddSale(props) {
                 name='Salary'
                 color='warning'
                 value={valueData?.Salary}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
               <label htmlFor='floatingInput'>Mức lương</label>
             </div>
@@ -179,7 +179,7 @@ function AddSale(props) {
                 name='StoreId'
                 color='warning'
                 value={valueData?.StoreId}
-                onChange={handleChangeData}>
+                  onChange={e=>handleChangeData(e)}>
                   {
                     listStoreId?.map((item,index)=>(
                       <option key={index} value={item?.Id}>{item.StoreName}</option>

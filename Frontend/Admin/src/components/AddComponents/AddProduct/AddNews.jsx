@@ -88,12 +88,12 @@ function AddNew(props) {
                 name='Title'
                 color='warning'
                 value={valueData.Title}
-                onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
               />
               <label htmlFor='floatingInput'>Tiêu đề</label>
             </div>
 
-            <input type='file' id='inputFile' onChange={HandleChange} />
+            <input type='file' id='inputFile'   onChange={(e) => handleChange(e)} />
             <label
               className='inputFileLabel label--input inputData '
               htmlFor='inputFile'>
@@ -111,7 +111,7 @@ function AddNew(props) {
                 name='Content'
                 color='warning'
                 value={valueData.Content}
-                onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
                 style={{ height: '200px' }}></textarea>
               <label  style={{color:'#747373'}}className='Content ' for='floatingTextarea2'>
                 Nội dung

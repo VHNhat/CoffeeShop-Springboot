@@ -25,7 +25,6 @@ function SignIn(props) {
     if (Password.length > 0 && Password === ConfirmPassword) {
       try {
         const res = await signUpUser(dataFrom);
-       
          if(res?.success)
          {
              enqueueSnackbar("Thành công", { variant: "success" });
@@ -36,7 +35,7 @@ function SignIn(props) {
            {
             console.log(JSON.parse(res.data));
              JSON.parse(res?.data).forEach(item=>{
-              enqueueSnackbar(item + " is used!!!", { variant: "error" });
+              enqueueSnackbar(item + " is used!!!", { variant: "error",autoHideDuration: 4000 });
            })
            
            }

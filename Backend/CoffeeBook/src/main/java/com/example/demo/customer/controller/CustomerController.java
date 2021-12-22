@@ -103,7 +103,7 @@ public class CustomerController {
 		String res = service.Register(dto);
 		if (res == "1")
 			return new ResponseEntity<>(HttpStatus.OK);
-		return new ResponseEntity<>(new Gson().toJson(res), HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(new Gson().toJson(res), HttpStatus.OK);
 	}
 
 	@PutMapping("customer/edit/{id}")

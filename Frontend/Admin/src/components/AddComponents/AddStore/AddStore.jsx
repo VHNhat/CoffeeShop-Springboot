@@ -112,7 +112,7 @@ function AddStore({ manager }) {
                   name='StoreName'
                   color='warning'
                   value={valueData?.StoreName}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Tên của hàng</label>
               </div>
@@ -122,7 +122,7 @@ function AddStore({ manager }) {
                   name='ManagerId'
                   color='warning'
                   value={valueData.ManagerId}
-                  onChange={handleChangeData}>
+                     onChange={e=>handleChangeData(e)}>
                   {manager?.map((item, index) => (
                     <option key={index} value={item.Id}>
                       {item.Name}
@@ -138,7 +138,7 @@ function AddStore({ manager }) {
                   name='Phone'
                   color='warning'
                   value={valueData?.Phone}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Số điện thoại</label>
               </div>
@@ -149,7 +149,7 @@ function AddStore({ manager }) {
                   name='Description'
                   color='warning'
                   value={valueData?.Description}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
 
                 <label htmlFor='floatingInput'>Mô tả cửa hàng</label>
@@ -162,7 +162,7 @@ function AddStore({ manager }) {
                   name='Address'
                   color='warning'
                   value={valueData?.Address}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Địa chỉ</label>
               </div>
@@ -170,7 +170,7 @@ function AddStore({ manager }) {
             </div>
             <div className='textRight'>
              
-                <input type='file' id='inputFile' onChange={HandleChangeImg} />
+                <input type='file' id='inputFile' onChange={e=>HandleChangeImg(e)}  />
                 <label
                   className='inputFileLabel label--input inputData '
                   htmlFor='inputFile'>
@@ -194,7 +194,7 @@ function AddStore({ manager }) {
                   name='Country'
                   color='warning'
                   value={valueData?.Country}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Đất nước</label>
               </div>
@@ -206,7 +206,7 @@ function AddStore({ manager }) {
                   name='LinkGG'
                   color='warning'
                   value={valueData?.LinkGG}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Địa chỉ GoogleMap</label>
               </div>
@@ -217,7 +217,7 @@ function AddStore({ manager }) {
                   name='District'
                   color='warning'
                   value={valueData?.District}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
               
                 />
                 <label htmlFor='floatingInput'>Quận (Số quận)</label>

@@ -63,7 +63,7 @@ public class Product extends AbstractEntity {
 	@JsonProperty("CreatedDate")
 	private LocalDateTime createdDate;
 
-	@Column(name = "Photo")
+	@Column(name = "Photo", length = 5000)
 	@JsonProperty("Photo")
 	private String photo;
 

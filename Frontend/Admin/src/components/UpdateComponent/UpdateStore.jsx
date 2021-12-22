@@ -95,6 +95,7 @@ function UpdateStore({ id }) {
           variant: 'warning',
         });
       }
+      //setFlag(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [urlImage,flag]);
@@ -121,9 +122,9 @@ function UpdateStore({ id }) {
         }
       );
     } else {
-      setUrlimage(null);
+      setUrlimage(null);  setFlag(!flag);
     }
-    setFlag(!flag);
+  
   };
   return (
     <div className='UpdateStore'>
@@ -150,7 +151,7 @@ function UpdateStore({ id }) {
                   name='StoreName'
                   color='warning'
                   value={valueData?.StoreName}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Tên cửa hàng</label>
               </div>
@@ -160,7 +161,7 @@ function UpdateStore({ id }) {
                   name='ManagerId'
                   color='warning'
                   value={valueData.ManagerId}
-                  onChange={handleChangeData}>
+                     onChange={e=>handleChangeData(e)}>
                   {manager?.map((item, index) => (
                     <option
                       selected={item?.Id === valueData?.ManagerId && 'selected'}
@@ -179,7 +180,7 @@ function UpdateStore({ id }) {
                   name='Phone'
                   color='warning'
                   value={valueData?.Phone}
-                  onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Số điện thoại</label>
               </div>
@@ -190,7 +191,7 @@ function UpdateStore({ id }) {
                   name='Description'
                   color='warning'
                   value={valueData?.Description}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
 
                 <label htmlFor='floatingInput'>Mô tả cửa hàng</label>
@@ -203,13 +204,13 @@ function UpdateStore({ id }) {
                   name='Address'
                   color='warning'
                   value={valueData?.Address}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Địa chỉ</label>
               </div>
             </div>
             <div className='textRight'>
-              <input type='file' id='inputFile' onChange={HandleChangeImg} />
+              <input type='file' id='inputFile' onChange={e=>HandleChangeImg(e)}  />
               <label
                 className='inputFileLabel label--input inputData '
                 htmlFor='inputFile'>
@@ -233,7 +234,7 @@ function UpdateStore({ id }) {
                   name='Country'
                   color='warning'
                   value={valueData?.Country}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Đất nước</label>
               </div>
@@ -245,7 +246,7 @@ function UpdateStore({ id }) {
                   name='LinkGG'
                   color='warning'
                   value={valueData?.LinkGG}
-                  onChange={handleChangeData}
+                     onChange={e=>handleChangeData(e)}
                 />
                 <label htmlFor='floatingInput'>Địa chỉ GoogleMap</label>
               </div>
@@ -255,7 +256,7 @@ function UpdateStore({ id }) {
                   name='District'
                   color='warning'
                   value={valueData?.District}
-                  onChange={handleChangeData}>
+                     onChange={e=>handleChangeData(e)}>
                   {district?.map((item, index) => (
                     <option
                       selected={

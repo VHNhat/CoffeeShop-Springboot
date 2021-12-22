@@ -196,6 +196,7 @@ function UserDetails({ id, setFlagAvata }) {
           variant: 'warning',
         });
       }
+      setFlag(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [urlImage,flag]);
@@ -226,7 +227,7 @@ function UserDetails({ id, setFlagAvata }) {
     else{
       setUrlimage(null);
     }
-    setFlag(!flag);
+    setFlag(true);
   };
 
   return (
@@ -254,7 +255,7 @@ function UserDetails({ id, setFlagAvata }) {
                 />
               </td>
               <td>
-              <input style={{display:'none'}} type='file' id='inputFile' onChange={HandleChangeImg} />
+              <input style={{display:'none'}} type='file' id='inputFile' onChange={e=>HandleChangeImg(e)}  />
               
               <label htmlFor="inputFile">
                 <div className='avataPreview'>

@@ -77,7 +77,7 @@ function UpdateCustomer(props) {
                 name='Name'
                 color='warning'
                 value={valueData.Name}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
               <label htmlFor='floatingInput'>Họ và Tên</label>
             </div>
@@ -88,7 +88,7 @@ function UpdateCustomer(props) {
                 name='Email'
                 color='warning'
                 value={valueData.Email}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
               <label htmlFor='floatingInput'>Email</label>
             </div>
@@ -99,7 +99,7 @@ function UpdateCustomer(props) {
                 name='Phone'
                 color='warning'
                 value={valueData.Phone}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
               <label htmlFor='floatingInput'>Số điện thoại</label>
             </div>
@@ -110,7 +110,7 @@ function UpdateCustomer(props) {
                 name='Address'
                 color='warning'
                 value={valueData.Address}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
               <label htmlFor='floatingInput'>Địa chỉ</label>
             </div>
@@ -119,7 +119,7 @@ function UpdateCustomer(props) {
                 name='Gender'
                 color='warning'
                 value={valueData.Gender}
-                onChange={handleChange}>
+                 onChange={(e) => handleChange(e)}>
 
                   <option value="1">Nam</option>
                   <option value="0">Nữ</option>

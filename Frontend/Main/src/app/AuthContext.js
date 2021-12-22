@@ -27,9 +27,9 @@ const AuthContextProvider = ({ children }) => {
    
   };
   const signUpUser = async datafrom=> {
+    console.log(datafrom);
     try {
       const response = await axios.post('/customer/signup',datafrom )
-      console.log(response);
       if (response?.data==='') {
         return { success: true, data:0 };
         

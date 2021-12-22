@@ -75,7 +75,7 @@ function UpdateRole(props) {
                 name='RoleName'
                 color='warning'
                 value={valueData?.RoleName}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
               <label htmlFor='floatingInput'>Tên quyền</label>
             </div>
@@ -87,7 +87,7 @@ function UpdateRole(props) {
                 name='Description'
                 color='warning'
                 value={valueData?.Description}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
 
               <label htmlFor='floatingInput'>Mô tả </label>

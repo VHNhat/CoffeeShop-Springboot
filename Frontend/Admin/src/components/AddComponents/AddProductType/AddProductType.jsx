@@ -108,7 +108,7 @@ function AddProductType(props) {
 
      
 
-        <input type='file' id='inputFile' onChange={HandleChangeImg} />
+        <input type='file' id='inputFile' onChange={e=>HandleChangeImg(e)}  />
         <label className='inputFileLabel label--input inputData ' htmlFor='inputFile'>
           <div className='box_input'>
             <p className='text-center textUpload '>Hình ảnh mô tả</p>

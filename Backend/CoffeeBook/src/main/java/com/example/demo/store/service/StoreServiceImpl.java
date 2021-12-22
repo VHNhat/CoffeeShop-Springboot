@@ -55,6 +55,9 @@ public class StoreServiceImpl extends GenericServiceImpl<Store, Long> implements
 			store.setDescription(dto.getDescription());
 			store.setAddress(dto.getAddress());
 			store.setCountry(dto.getCountry());
+			store.setDistrict(dto.getDistrict());
+			store.setLinkGG(dto.getLinkGG());
+			store.setPhoto(dto.getPhoto());
 			return repo.save(store);
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());

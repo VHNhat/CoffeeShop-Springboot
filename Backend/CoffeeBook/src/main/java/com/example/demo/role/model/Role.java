@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 import javax.persistence.Table;
 
 import com.example.demo.account.model.Account;
@@ -39,6 +40,13 @@ public class Role extends AbstractEntity {
 	@OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<Account> accounts = new HashSet<>();
+	
+	@PreRemove
+	private void preRemove() {
+	    for (Account a : accounts) {
+	        a.setRole(null);
+	    }
+	}
 
 	public String getRoleName() {
 		return roleName;

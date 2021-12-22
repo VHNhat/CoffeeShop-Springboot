@@ -83,6 +83,7 @@ function UpdateDiscounts({ id }) {
           variant: 'warning',
         });
       }
+      //setFlag(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [urlImage,flag]);
@@ -111,9 +112,9 @@ function UpdateDiscounts({ id }) {
       );
     }
     else{
-      setUrlimage(null);
+      setUrlimage(null);  setFlag(!flag);
     }
-    setFlag(!flag);
+  
   };
   return (
     <div className='UpdateDiscounts'>
@@ -139,7 +140,7 @@ function UpdateDiscounts({ id }) {
                   name='Name'
                   color='warning'
                   value={valueData?.Name}
-                  onChange={handleChange}
+                   onChange={(e) => handleChange(e)}
                 />
                 <label htmlFor='floatingInput'>Tiêu đề</label>
               </div>
@@ -150,7 +151,7 @@ function UpdateDiscounts({ id }) {
                   name='Value'
                   color='warning'
                   value={valueData?.Value}
-                  onChange={handleChange}
+                   onChange={(e) => handleChange(e)}
                   min={1}
                 />
                 <label htmlFor='floatingInput'>Giá trị</label>
@@ -162,7 +163,7 @@ function UpdateDiscounts({ id }) {
                   name='Quantity'
                   color='warning'
                   value={valueData?.Quantity}
-                  onChange={handleChange}
+                   onChange={(e) => handleChange(e)}
                   min={1}
                 />
                 <label htmlFor='floatingInput'>Số lượng</label>
@@ -175,7 +176,7 @@ function UpdateDiscounts({ id }) {
                   name='MinPrice'
                   color='warning'
                   value={valueData?.MinPrice}
-                  onChange={handleChange}
+                   onChange={(e) => handleChange(e)}
                 />
                 <label htmlFor='floatingInput'>Giá tối thiểu</label>
               </div>
@@ -183,7 +184,7 @@ function UpdateDiscounts({ id }) {
             
             </div>
             <div className='largeText'>
-              <input type='file' id='inputFile' onChange={HandleChangeImg} />
+              <input type='file' id='inputFile' onChange={e=>HandleChangeImg(e)}  />
               <label
                 className='inputFileLabel label--input inputData '
                 htmlFor='inputFile'>
@@ -207,7 +208,7 @@ function UpdateDiscounts({ id }) {
                   name='ExpiredDate'
                   color='warning'
                   value={valueData?.ExpiredDate.slice(0,10)}
-                  onChange={handleChange}
+                   onChange={(e) => handleChange(e)}
                   min={`${DateNow.getFullYear()}-${
                     DateNow.getMonth() + 1
                   }-${DateNow.getDate()}`}

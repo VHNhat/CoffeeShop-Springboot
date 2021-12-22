@@ -67,7 +67,7 @@ function AddAccount(props) {
                 name='Username'
                 color='warning'
                 value={valueData?.Username}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
               <label htmlFor='floatingInput'>Username</label>
             </div>
@@ -79,7 +79,7 @@ function AddAccount(props) {
                 name='Password'
                 color='warning'
                 value={valueData?.Password}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
 
               <label htmlFor='floatingInput'>Password</label>
@@ -91,7 +91,7 @@ function AddAccount(props) {
                 name='RoleId'
                 color='warning'
                 value={valueData?.RoleId}
-                onChange={handleChangeData}>
+                  onChange={e=>handleChangeData(e)}>
                   {
                     listRoleId?.map((item,index)=>(
                       <option key={index} value={item?.Id}>{item.RoleName}</option>

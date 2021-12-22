@@ -43,7 +43,7 @@ function AddSupplier(props) {
                 name='Name'
                 color='warning'
                 value={valueData?.Name}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
               <label htmlFor='floatingInput'>Tên nhà cung cấp</label>
             </div>
@@ -55,7 +55,7 @@ function AddSupplier(props) {
                 name='Description'
                 color='warning'
                 value={valueData?.Description}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
 
               <label htmlFor='floatingInput'>Mô tả nhà </label>
@@ -67,7 +67,7 @@ function AddSupplier(props) {
                 name='Address'
                 color='warning'
                 value={valueData?.Address}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
 
               <label htmlFor='floatingInput'>Địa chỉ</label>
@@ -79,7 +79,7 @@ function AddSupplier(props) {
                 name='City'
                 color='warning'
                 value={valueData?.City}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
 
               <label htmlFor='floatingInput'>Thành phố </label>
@@ -91,7 +91,7 @@ function AddSupplier(props) {
                 name='Country'
                 color='warning'
                 value={valueData?.Country}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
 
               <label htmlFor='floatingInput'>Quốc gia</label>
@@ -103,7 +103,7 @@ function AddSupplier(props) {
                 name='Phone'
                 color='warning'
                 value={valueData?.Phone}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
 
               <label htmlFor='floatingInput'>Số điện thoại</label>
@@ -115,7 +115,7 @@ function AddSupplier(props) {
                 name='Url'
                 color='warning'
                 value={valueData?.Url}
-                onChange={handleChangeData}
+                  onChange={e=>handleChangeData(e)}
               />
                <label htmlFor='floatingInput'>Website</label>
             </div>

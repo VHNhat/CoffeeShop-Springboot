@@ -108,7 +108,7 @@ function AddDiscounts(props) {
                   name='Name'
                   color='warning'
                   value={valueData?.Name}
-                  onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                 />
                 <label htmlFor='floatingInput'>Tiêu đề</label>
               </div>
@@ -119,7 +119,7 @@ function AddDiscounts(props) {
                   name='Value'
                   color='warning'
                   value={valueData?.Value}
-                  onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                   min={1}
                 />
                 <label htmlFor='floatingInput'>Giá trị</label>
@@ -131,7 +131,7 @@ function AddDiscounts(props) {
                   name='Quantity'
                   color='warning'
                   value={valueData?.Quantity}
-                  onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                   min={1}
                 />
                 <label htmlFor='floatingInput'>Số lượng</label>
@@ -144,7 +144,7 @@ function AddDiscounts(props) {
                   name='MinPrice'
                   color='warning'
                   value={valueData?.MinPrice}
-                  onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                 />
                 <label htmlFor='floatingInput'>Giá tối thiểu</label>
               </div>
@@ -152,7 +152,7 @@ function AddDiscounts(props) {
             
             </div>
             <div className='largeText'>
-              <input type='file' id='inputFile' onChange={HandleChangeImg} />
+              <input type='file' id='inputFile' onChange={e=>HandleChangeImg(e)} />
               <label
                 className='inputFileLabel label--input inputData '
                 htmlFor='inputFile'>
@@ -176,7 +176,7 @@ function AddDiscounts(props) {
                   name='ExpiredDate'
                   color='warning'
                   value={valueData?.ExpiredDate.slice(0,10)}
-                  onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
                   min={`${DateNow.getFullYear()}-${
                     DateNow.getMonth() + 1
                   }-${DateNow.getDate()}`}

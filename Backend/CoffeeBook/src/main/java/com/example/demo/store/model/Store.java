@@ -3,13 +3,13 @@ package com.example.demo.store.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PreRemove;
 import javax.persistence.Table;
 
 import com.example.demo.commondata.model.AbstractEntity;
@@ -52,7 +52,7 @@ public class Store extends AbstractEntity {
 	@JsonProperty("Phone")
 	private String phone;
 	
-	@Column(name = "Photo", nullable = true)
+	@Column(name = "Photo", nullable = true, length = 5000)
 	@JsonProperty("Photo")
 	private String photo;
 	
@@ -69,10 +69,17 @@ public class Store extends AbstractEntity {
 	@JsonProperty("Manager")
 	private Manager manager;
 
-	@OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "store")
 	@JsonIgnore
 	private Set<Employee> employee = new HashSet<>();
 
+	@PreRemove
+	private void preRemove() {
+	    for (Employee e : employee) {
+	        e.setStore(null);
+	    }
+	}
+	
 	// Getters & Setters
 	public String getStoreName() {
 		return storeName;

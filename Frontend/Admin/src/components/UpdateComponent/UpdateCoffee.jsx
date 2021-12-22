@@ -92,6 +92,7 @@ function UpdateCoffee(props) {
       } else {
         enqueueSnackbar('Có lỗi xảy ra xin hãy thử lại', { variant: 'warning' });
       }
+      //setFlag(false);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [urlImage,flag]);
@@ -119,9 +120,9 @@ function UpdateCoffee(props) {
       );
     }
     else{
-      setUrlimage(null);
+      setUrlimage(null);    setFlag(!flag);
     }
-    setFlag(!flag);
+
   };
 
   
@@ -151,7 +152,7 @@ function UpdateCoffee(props) {
                 name='Name'
                 color='warning'
                 value={valueData.Name}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
               <label htmlFor='floatingInput'>Tiêu đề</label>
             </div>
@@ -163,7 +164,7 @@ function UpdateCoffee(props) {
                 name='Price'
                 color='warning'
                 value= {valueData.Price}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
              
               <label htmlFor='floatingInput'>Giá</label>
@@ -175,7 +176,7 @@ function UpdateCoffee(props) {
                 name='ProductTypeId'
                 color='warning'
                 value={valueData?.ProductTypeId}
-                onChange={handleChange}>
+                 onChange={(e) => handleChange(e)}>
                   {
                     proType?.map((item,index)=>(
                       <option selected={valueData?.ProductTypeId===item?.Id&&"seleted"} key={index} value={item?.Id}>{item?.Name}</option>
@@ -194,7 +195,7 @@ function UpdateCoffee(props) {
                 name='supplierId'
                 color='warning'
                 value={valueData?.SupplierId}
-                onChange={handleChange}>
+                 onChange={(e) => handleChange(e)}>
                   {
                     supplier?.map((item,index)=>(
                       <option selected={valueData?.SupplierId===item?.Id&&"seleted"} key={index} value={item?.Id}>{item?.Name}</option>
@@ -212,13 +213,13 @@ function UpdateCoffee(props) {
                 name='Size'
                 color='warning'
                 value={valueData.Size}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
               />
               <label htmlFor='floatingInput'>Size</label>
             </div>
             </div>
             <div className='data--large_text'>
-            <input type='file' id='inputFile' onChange={HandleChangeImg} />
+            <input type='file' id='inputFile' onChange={e=>HandleChangeImg(e)}  />
      
             
             <label className='inputFileLabel inputData ' htmlFor='inputFile'>
@@ -238,7 +239,7 @@ function UpdateCoffee(props) {
                 name='Description'
                 color='warning'
                 value={valueData.Description}
-                onChange={handleChange}
+                 onChange={(e) => handleChange(e)}
                 style={{ height: '170px' }}></textarea>
               <label className='description' htmlFor='floatingTextarea2'>
                 Nội dung

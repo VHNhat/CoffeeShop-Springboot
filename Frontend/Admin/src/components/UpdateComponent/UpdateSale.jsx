@@ -90,7 +90,7 @@ function UpdateSale(props) {
                 name="Name"
                 color="warning"
                 value={valueData?.Name}
-                onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
               />
               <label htmlFor="floatingInput">Họ và Tên</label>
             </div>
@@ -101,7 +101,7 @@ function UpdateSale(props) {
                 name="Email"
                 color="warning"
                 value={valueData?.Email}
-                onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
               />
               <label htmlFor="floatingInput">Email</label>
             </div>
@@ -112,7 +112,7 @@ function UpdateSale(props) {
                 name="Phone"
                 color="warning"
                 value={valueData?.Phone}
-                onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
               />
               <label htmlFor="floatingInput">Số điện thoại</label>
             </div>
@@ -123,7 +123,7 @@ function UpdateSale(props) {
                 name="Age"
                 color="warning"
                 value={valueData?.Age}
-                onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
               />
               <label htmlFor="floatingInput">Tuổi</label>
             </div>
@@ -133,7 +133,7 @@ function UpdateSale(props) {
                 name="Gender"
                 color="warning"
                 value={valueData?.Gender}
-                onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
               >
                 {valueData?.Gender ? (
                   <>
@@ -157,7 +157,7 @@ function UpdateSale(props) {
                 name="Salary"
                 color="warning"
                 value={valueData?.Salary}
-                onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
               />
               <label htmlFor="floatingInput">Lương</label>
             </div>
@@ -168,7 +168,7 @@ function UpdateSale(props) {
                 name="Address"
                 color="warning"
                 value={valueData?.Address}
-                onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
               />
               <label htmlFor="floatingInput">Địa chỉ</label>
             </div>
@@ -179,7 +179,7 @@ function UpdateSale(props) {
                 name='StoreId'
                 color='warning'
                 value={valueData?.StoreId}
-                onChange={handleChange}>
+                  onChange={(e) => handleChange(e)}>
                   {
                     listStoreId?.map((item,index)=>(
                       <option key={index} value={item?.Id}>{item.StoreName}</option>
